@@ -1,6 +1,6 @@
 # delegate-grill-with-docs
 
-`delegate-grill-with-docs` is a Codex skill for running a `grill-with-docs`-style discussion through one delegated subagent. When you explicitly invoke `$delegate-grill-with-docs`, Codex spawns one inherited subagent, relays questions and answers back and forth, and writes the final outcome back to the original document.
+`delegate-grill-with-docs` is a Codex skill for running a `grill-with-docs`-style discussion with one delegated subagent answering on the user's behalf. When you explicitly invoke `$delegate-grill-with-docs`, the main agent asks the grill-with-docs questions, the subagent answers from repository evidence, and the main agent writes the final outcome back to the original document.
 
 ## Trigger
 
@@ -50,14 +50,14 @@ Use $delegate-grill-with-docs to grill the ideas in @xxx-doc.md, then apply the 
 
 ## Notes
 
-- Use this skill only when you want Codex to delegate the discussion to one subagent and keep a multi-round interview going through that same agent.
+- Use this skill only when you want the main agent to run the grill-with-docs interview while one subagent answers on the user's behalf.
 - It does not auto-trigger just because `grill-with-docs` is mentioned.
 
 ---
 
 ## 中文说明
 
-这个 skill 只在你显式写出 `$delegate-grill-with-docs` 时触发。即使提到 `grill-with-docs`，也不会自动触发这个 skill。
+这个 skill 只在你显式写出 `$delegate-grill-with-docs` 时触发。触发后由 main agent 按 `grill-with-docs` 提问，同一个 subagent 作为用户代理基于仓库证据回答，最后由 main agent 综合回答并回写原文档。即使提到 `grill-with-docs`，也不会自动触发这个 skill。
 
 ## 安装方式
 
@@ -103,7 +103,7 @@ git clone https://github.com/Caph-dev/delegate-grill-with-docs ~/.codex/skills/d
 
 ## 注意事项
 
-- 仅在您希望 Codex 将讨论委托给某个子代理时才使用此技能。
+- 仅在您希望 main agent 执行 `grill-with-docs` 提问，而同一个 subagent 代表用户回答时才使用此技能。
 - 它不会仅仅因为提到了 `grill-with-docs` 就自动触发。
 
 
