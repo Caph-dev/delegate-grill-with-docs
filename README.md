@@ -12,14 +12,14 @@ This skill only activates when you explicitly mention `$delegate-grill-with-docs
 
 Send this repository link to your agent and ask it to install the workflow:
 
-`https://github.com/Walaxy/delegate-grill-with-docs`
+`https://github.com/Caph-dev/delegate-grill-with-docs`
 
 Tell it to keep the repository available in the workspace, read `SKILL.md`, and wire the workflow into its own project-instruction system.
 
 You can also paste this prompt directly into your agent:
 
 ```text
-Install the skill from https://github.com/Walaxy/delegate-grill-with-docs.
+Install the skill from https://github.com/Caph-dev/delegate-grill-with-docs.
 ```
 
 ### Codex
@@ -33,7 +33,7 @@ Clone or copy the repository into your Codex skills directory:
 Example:
 
 ```zsh
-git clone https://github.com/Walaxy/delegate-grill-with-docs ~/.codex/skills/delegate-grill-with-docs
+git clone https://github.com/Caph-dev/delegate-grill-with-docs ~/.codex/skills/delegate-grill-with-docs
 ```
 
 After installing, restart Codex to pick up the new skill.
@@ -65,14 +65,14 @@ Use $delegate-grill-with-docs to grill the ideas in @xxx-doc.md, then apply the 
 
 把这个仓库链接发给你的 agent，让它替你安装这个 skill：
 
-`https://github.com/Walaxy/delegate-grill-with-docs`
+`https://github.com/Caph-dev/delegate-grill-with-docs`
 
 告诉它把仓库保留在工作区里，读取 `SKILL.md`，并接到它自己的项目指令系统中。
 
 你也可以直接把下面这段发给你的 agent：
 
 ```text
-安装来自 https://github.com/Walaxy/delegate-grill-with-docs 的 skill。
+安装来自 https://github.com/Caph-dev/delegate-grill-with-docs 的 skill。
 ```
 
 ### Codex
@@ -86,7 +86,7 @@ Use $delegate-grill-with-docs to grill the ideas in @xxx-doc.md, then apply the 
 示例：
 
 ```zsh
-git clone https://github.com/Walaxy/delegate-grill-with-docs ~/.codex/skills/delegate-grill-with-docs
+git clone https://github.com/Caph-dev/delegate-grill-with-docs ~/.codex/skills/delegate-grill-with-docs
 ```
 
 安装后重启 Codex 以加载新 skill。
@@ -100,3 +100,13 @@ git clone https://github.com/Walaxy/delegate-grill-with-docs ~/.codex/skills/del
 ```text
 围绕 @xxx-doc.md，使用 $delegate-grill-with-docs 组织一次 grill-with-docs 式讨论，保留原有结构，尽量最小改动。
 ```
+
+## 注意事项
+
+- 仅在您希望 Codex 将讨论委托给某个子代理时才使用此技能。
+- 它不会仅仅因为提到了 `grill-with-docs` 就自动触发。
+
+
+
+![认可linux.do](https://ld.xh.do/ld-badge.svg)
+
