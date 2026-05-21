@@ -1,7 +1,7 @@
 interface:
   display_name: "Delegate Grill With Docs"
-  short_description: "Answer grill-with-docs with one subagent"
-  default_prompt: "Use $delegate-grill-with-docs to answer grill-with-docs questions through one inherited subagent."
+  short_description: "Run grill-with-docs through one subagent"
+  default_prompt: "Use $delegate-grill-with-docs to run grill-with-docs through one inherited subagent and keep relaying questions and answers until the discussion is complete."
 
 policy:
   allow_implicit_invocation: false

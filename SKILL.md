@@ -1,6 +1,6 @@
 ---
 name: delegate-grill-with-docs
-description: Delegate grill-with-docs sessions to one inherited subagent that answers the grilling questions on the user's behalf, exploring code and docs when needed. Use when Codex should run the Matt Pocock grill-with-docs workflow but hand the interview and answers to a single spawned subagent instead of asking the user directly.
+description: Run grill-with-docs through one inherited subagent while preserving the original multi-round interview flow. Use when Codex should keep one delegated interviewer in the loop and relay user answers back and forth until the discussion is complete.
 ---
 
 # Delegate Grill With Docs
@@ -10,11 +10,13 @@ description: Delegate grill-with-docs sessions to one inherited subagent that an
 1. Spawn exactly one worker subagent.
 2. Fork the current context into it.
 3. Leave `model` and `reasoning_effort` unset so the subagent inherits the parent agent's model and reasoning strength.
-4. Tell the subagent to act as a proxy for the user and answer the questions raised by the [grill-with-docs](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs) workflow.
-5. Ask the subagent to inspect code and documentation first whenever a question can be grounded in repo facts.
-6. Require the subagent to return the best answer for each question, the supporting evidence, and any unresolved item that still needs the real user.
-7. Relay the subagent's output to the user or continue the session from that single pass.
-8. Stop after one subagent. Do not fan out.
+4. Tell the subagent to act as the interview lead for the [grill-with-docs](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs) workflow and keep the conversation open until it has enough information to finish.
+5. Require the subagent to ask exactly one question at a time, wait for the answer, then decide whether another question is needed.
+6. Ask the subagent to inspect code and documentation first whenever a question can be grounded in repo facts.
+7. Relay each subagent question to the user, capture the user's answer, and send that answer back to the same subagent.
+8. Repeat the relay loop until the subagent explicitly says the discussion is complete or no more questions are needed.
+9. When the subagent finishes, relay its final recommendation, supporting evidence, and any unresolved items, then apply the agreed document edits.
+10. Stop after one subagent. Do not fan out or replace it mid-session.
 
 ## Guardrails
 

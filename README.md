@@ -1,6 +1,6 @@
 # delegate-grill-with-docs
 
-`delegate-grill-with-docs` is a Codex skill for running a `grill-with-docs`-style discussion through one delegated subagent. When you explicitly invoke `$delegate-grill-with-docs`, Codex spawns one inherited subagent, lets it work through the discussion, and writes the final outcome back to the original document.
+`delegate-grill-with-docs` is a Codex skill for running a `grill-with-docs`-style discussion through one delegated subagent. When you explicitly invoke `$delegate-grill-with-docs`, Codex spawns one inherited subagent, relays questions and answers back and forth, and writes the final outcome back to the original document.
 
 ## Trigger
 
@@ -50,7 +50,7 @@ Use $delegate-grill-with-docs to grill the ideas in @xxx-doc.md, then apply the 
 
 ## Notes
 
-- Use this skill only when you want Codex to delegate the discussion to one subagent.
+- Use this skill only when you want Codex to delegate the discussion to one subagent and keep a multi-round interview going through that same agent.
 - It does not auto-trigger just because `grill-with-docs` is mentioned.
 
 ---
@@ -109,4 +109,3 @@ git clone https://github.com/Caph-dev/delegate-grill-with-docs ~/.codex/skills/d
 
 
 ![认可linux.do](https://ld.xh.do/ld-badge.svg)
-
